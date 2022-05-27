@@ -1,2 +1,1 @@
-# shashkin-hometask-continue-make-autotests-tests
-Repository for lesson "Продолжаем разрабатывать автотесты. Больше возможностей"
+Repository with refactored autotests for "demoqa" web site practice form, with PageObjects and Java Faker introduced.
