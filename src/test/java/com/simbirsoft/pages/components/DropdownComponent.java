@@ -5,10 +5,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DropdownComponent {
 
-    public void selectElementFromDropdown(String geoElement, String geographicName) {
+    public DropdownComponent selectElementFromDropdown(String geoElement, String geographicName) {
         String selector = "div#%s";
         String formattedSelector = String.format(selector, geoElement);
         $(formattedSelector).click();
         $("div#stateCity-wrapper").$(byText(geographicName)).click();
+        return this;
     }
 }

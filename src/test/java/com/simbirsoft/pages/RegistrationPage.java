@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.simbirsoft.tests.TestData.userPicClasspath;
 
 public class RegistrationPage {
 
+    public static String userPicClasspath = "img/7dBulQtN5gc.jpg";
     private SelenideElement formTitle = $(".practice-form-wrapper"),
             firstNameInput = $("input#firstName"),
             lastNameInput = $("input#lastName"),
@@ -34,52 +34,64 @@ public class RegistrationPage {
     public DropdownComponent dropdownComponent = new DropdownComponent();
     public ModalWindowComponent modalWindowComponent = new ModalWindowComponent();
 
-    public void openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
+        return this;
     }
 
-    public void typeFirstName(String firstName) {
+    public RegistrationPage typeFirstName(String firstName) {
         firstNameInput.setValue(firstName);
+        return this;
     }
 
-    public void typeLastName(String lastName) {
+    public RegistrationPage typeLastName(String lastName) {
         lastNameInput.setValue(lastName);
+        return this;
     }
 
-    public void typeEmail(String email) {
+    public RegistrationPage typeEmail(String email) {
         emailInput.setValue(email);
+        return this;
     }
 
-    public void typePhone(String phone) {
+    public RegistrationPage typePhone(String phone) {
         phoneInput.setValue(phone);
+        return this;
     }
 
-    public void uploadUserPic() {
+    public RegistrationPage uploadUserPic() {
         userPicUpload.uploadFromClasspath(userPicClasspath);
+        return this;
     }
 
-    public void selectMaleGender() {
+    public RegistrationPage selectMaleGender() {
         selectorMaleGender.click();
+        return this;
     }
 
-    public void selectFemaleGender() {
+    public RegistrationPage selectFemaleGender() {
         selectorFemaleGender.click();
+        return this;
     }
 
-    public void selectOtherGender() {
+    public RegistrationPage selectOtherGender() {
         selectorOtherGender.click();
+        return this;
     }
 
-    public void clickHobby(String hobby) {
+    public RegistrationPage clickHobby(String hobby) {
         checkboxHobby.$(byText(hobby)).click();
+        return this;
     }
 
-    public void typeAddress(String address) {
+    public RegistrationPage typeAddress(String address) {
         userAddressInput.setValue(address);
+        return this;
     }
 
-    public void clickSubmitButton() {
+    public RegistrationPage clickSubmitButton() {
         submitButton.click();
+        return this;
     }
 }
